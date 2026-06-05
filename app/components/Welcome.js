@@ -15,7 +15,7 @@ export default function Welcome({ onQuickReply }) {
   ];
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-6 py-10">
+    <div className="flex-1 flex flex-col items-center justify-center px-6 py-6 min-h-0 overflow-y-auto">
       {/* Big Logo */}
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
