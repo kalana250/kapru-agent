@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg-cream: #fdf8f1;
-  --bg-cream-light: #fefaf5;
-  --primary: #d946a8;
-  --primary-purple: #8b5cf6;
-  --accent-orange: #f59e0b;
-  --accent-pink: #ec4899;
+  /* Brand colors from Kapruka logo */
+  --bg-cream: #fafaf5;
+  --indigo-deep: #312e81;
+  --indigo-dark: #1e1b4b;
+  --indigo-soft: #f5f3ff;
+  --pink-accent: #ec4899;
+  --pink-soft: #fce7f3;
+  --gold: #fbbf24;
+  --gold-soft: #fef3c7;
   --text-dark: #1a1a2e;
   --text-muted: #6b7280;
-  --border-soft: #f3e9dd;
+  --border-soft: #e5e7eb;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -24,27 +25,32 @@ html, body {
   color: var(--text-dark);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Noto Sans Sinhala", sans-serif;
   -webkit-font-smoothing: antialiased;
+  cursor: default;
 }
 
-/* Soft gradient background */
+/* Layered background — premium feel */
 .bg-boutique {
   background: 
-    radial-gradient(ellipse at top left, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
-    linear-gradient(180deg, #fdf8f1 0%, #fef5e7 100%);
+    radial-gradient(ellipse at top left, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(49, 46, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+    #fafaf5;
 }
 
-/* Brand gradient */
+/* Brand gradient for special text */
 .brand-gradient {
-  background: linear-gradient(135deg, #d946a8 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #fbbf24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .brand-bg {
-  background: linear-gradient(135deg, #d946a8 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #fbbf24 100%);
+}
+
+.indigo-bg {
+  background: linear-gradient(180deg, #312e81 0%, #1e1b4b 100%);
 }
 
 .glass {
@@ -53,11 +59,19 @@ html, body {
   -webkit-backdrop-filter: blur(16px);
 }
 
+/* Sinhala text spacing */
+.sinhala-text {
+  font-family: "Noto Sans Sinhala", sans-serif;
+  line-height: 1.6;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #e5d5c0; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #c4b5a0; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
 /* Typing dots */
 @keyframes bounce-dot {
@@ -68,17 +82,26 @@ html, body {
 .typing-dot:nth-child(2) { animation-delay: 0.2s; }
 .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
-/* Soft chip shadow */
+/* Sidebar animation */
+.sidebar-enter {
+  animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Chip shadow */
 .chip-shadow {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(217,70,168,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(236,72,153,0.06);
 }
 
 /* Hide scrollbar utility */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Markdown content styling */
+/* Markdown styling */
 .prose-chat p { margin: 0.25rem 0; }
 .prose-chat strong { font-weight: 600; }
 .prose-chat ul { margin: 0.5rem 0; padding-left: 1.25rem; }
-.prose-chat a { color: #d946a8; text-decoration: underline; }
+.prose-chat a { color: #ec4899; text-decoration: underline; }

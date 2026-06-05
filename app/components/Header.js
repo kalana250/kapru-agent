@@ -1,33 +1,34 @@
 "use client";
 
-import { Sparkles, MoreVertical } from "lucide-react";
-import Image from "next/image";
+import { Menu, History, Settings } from "lucide-react";
 
-export default function Header() {
+export default function Header({ onMenuClick }) {
   return (
-    <header className="px-6 py-5 flex items-center justify-between glass border-b border-orange-100/50 sticky top-0 z-30">
-      {/* Left: Logo + Brand */}
-      <div className="flex items-center gap-4">
-        <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-md">
-          <Image
-            src="/kapruka-logo.jpeg"
-            alt="Kapruka"
-            width={56}
-            height={56}
-            className="w-full h-full object-cover"
-            priority
-          />
+    <header className="px-4 sm:px-6 py-3 flex items-center justify-between glass border-b border-gray-200 sticky top-0 z-20">
+      <div className="flex items-center gap-3">
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden w-9 h-9 rounded-lg hover:bg-gray-100 flex items-center justify-center"
+        >
+          <Menu size={20} />
+        </button>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            Active · Kapruka Certified
+          </span>
         </div>
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <h1 className="text-2xl font-bold brand-gradient">Kapru</h1>
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 border border-purple-200">
-              <Sparkles size={11} className="inline mr-1" />
-              Powered by Kapruka MCP
-            </span>
-          </div>
-          <p className="text-sm text-gray-500">Your personal boutique concierge</p>
-        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <button className="hidden sm:flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition">
+          <History size={16} />
+          History
+        </button>
+        <button className="hidden sm:flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition">
+          <Settings size={16} />
+          Clear
+        </button>
       </div>
     </header>
   );

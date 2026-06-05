@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Truck, Lock, Star } from "lucide-react";
 
 export default function Welcome({ onQuickReply }) {
@@ -16,20 +16,14 @@ export default function Welcome({ onQuickReply }) {
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-6 py-10">
-      {/* Big Palm Icon */}
+      {/* Big Logo */}
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
         transition={{ type: "spring", stiffness: 150, damping: 15 }}
-        className="w-28 h-28 rounded-3xl overflow-hidden mb-6 shadow-xl shadow-purple-200"
+        className="w-28 h-28 rounded-3xl overflow-hidden mb-6 shadow-xl shadow-indigo-200"
       >
-        <Image
-          src="/kapruka-logo.jpeg"
-          alt="Kapruka"
-          width={112}
-          height={112}
-          className="w-full h-full object-cover"
-        />
+        <Image src="/kapruka-logo.jpeg" alt="Kapruka" width={112} height={112} className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Sinhala "Ayubowan" */}
@@ -37,13 +31,11 @@ export default function Welcome({ onQuickReply }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="text-5xl sm:text-6xl md:text-7xl font-extrabold brand-gradient mb-4 text-center"
-        style={{ fontFamily: "'Noto Sans Sinhala', sans-serif", letterSpacing: "-0.02em" }}
+        className="text-5xl sm:text-6xl md:text-7xl font-extrabold brand-gradient mb-4 text-center sinhala-text"
       >
         ආයුබෝවන්!
       </motion.h1>
 
-      {/* English subtitle */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -53,7 +45,6 @@ export default function Welcome({ onQuickReply }) {
         Welcome to Kapru
       </motion.h2>
 
-      {/* Description */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,7 +71,7 @@ export default function Welcome({ onQuickReply }) {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => onQuickReply(`I'm looking for ${cat.label.toLowerCase()}`)}
-            className="px-5 py-3 bg-white rounded-full chip-shadow border border-orange-100 hover:border-pink-300 transition-all text-sm font-medium text-gray-700 flex items-center gap-2"
+            className="px-5 py-3 bg-white rounded-full chip-shadow border border-indigo-100 hover:border-pink-300 transition-all text-sm font-medium text-gray-700 flex items-center gap-2"
           >
             <span className="text-base">{cat.emoji}</span>
             {cat.label}
