@@ -116,3 +116,12 @@ html, body {
 .h-screen-fix {
   height: 100dvh;
 }
+
+/* Slim horizontal scrollbar for carousels */
+.scroll-thin::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #ec4899, #fbbf24);
+  border-radius: 2px;
+}
