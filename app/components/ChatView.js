@@ -7,7 +7,7 @@ import remarkGfm from "remark-gfm";
 import Image from "next/image";
 
 // ⚠️ CHANGE THIS to match your actual file (.png, .jpg, or .jpeg)
-const LOGO_SRC = "/kapruka-logo.png";
+const LOGO_SRC = "/kapruka-logo.jpeg";
 
 export default function ChatView({ messages, isLoading }) {
   const endRef = useRef(null);

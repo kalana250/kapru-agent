@@ -8,7 +8,7 @@ export const maxDuration = 60;
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SYSTEM_PROMPT = `You are Kapru 🌴, a warm bilingual gifting concierge for Kapruka.com (Sri Lanka).
+const SYSTEM_PROMPT = `You are Kapru , a warm bilingual gifting concierge for Kapruka.com (Sri Lanka).
 
 Style:
 - Friendly, warm, conversational — like a helpful friend
