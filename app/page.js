@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-boutique">
+    <div className="flex bg-boutique" style={{ height: "100dvh" }}>
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}

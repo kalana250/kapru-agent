@@ -105,3 +105,14 @@ html, body {
 .prose-chat strong { font-weight: 600; }
 .prose-chat ul { margin: 0.5rem 0; padding-left: 1.25rem; }
 .prose-chat a { color: #ec4899; text-decoration: underline; }
+
+/* Mobile viewport height fix */
+@supports not (height: 100dvh) {
+  .h-screen-fix {
+    height: 100vh;
+  }
+}
+
+.h-screen-fix {
+  height: 100dvh;
+}

@@ -31,16 +31,18 @@ export default function Sidebar({ isOpen, onClose, onSelectOccasion }) {
 
       {/* Sidebar */}
       <aside
+        style={{ height: "100dvh" }}
         className={`
-          indigo-bg text-white
-          fixed lg:relative
-          top-0 left-0 h-full
-          w-72 z-50
-          transition-transform duration-300
-          ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-          flex flex-col
+            indigo-bg text-white
+            fixed lg:relative
+            top-0 left-0
+            w-72 z-50
+            transition-transform duration-300
+            ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+            flex flex-col
         `}
       >
+
         {/* Logo Section */}
         <div className="p-5 border-b border-white/10">
           <div className="flex items-center justify-between">
